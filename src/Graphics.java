@@ -3,6 +3,8 @@ import javafx.scene.paint.Color;
 import model.Car;
 import model.Model;
 
+import java.text.FieldPosition;
+
 public class Graphics {
 
     // Eigenschaften
@@ -19,16 +21,32 @@ public class Graphics {
     public void draw() {
 
         // Clear Screen
-        gc.clearRect(0,0, Model.WIDTH, Model.HEIGHT);
+        gc.setFill(Color.rgb(226,226,226));
+        gc.fillRect(0,0, Model.WIDTH, Model.HEIGHT);
+
+        // Draw road marking
+        for (int i = 0; i < Model.WIDTH; i+=70) {
+            gc.setFill(Color.BLACK);
+            gc.fillRect(10 + i, 405, 30, 5);
+            gc.fillRect(10 + i, 510, 30, 5);
+            gc.fillRect(10 + i, 615, 30, 5);
+        }
+
+        // Draw sidewalks
+        gc.setFill(Color.BLACK);
+        gc.fillRect(0, 300, 1000, 4);
+        gc.fillRect(0, 715, 1000, 4);
+
 
         // Draw Cars
         for (Car car : this.model.getCars()) {
             gc.setFill(Color.YELLOW);
-            gc.fillRect(
-                    car.getX() - car.getW()/2,
+            gc.fillRoundRect(car.getX() - car.getW()/2,
                     car.getY() - car.getH()/2,
                     car.getW(),
-                    car.getH()
+                    car.getH(),
+                    7,
+                    100
             );
         }
 

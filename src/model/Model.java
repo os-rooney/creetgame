@@ -6,8 +6,8 @@ import java.util.List;
 public class Model {
 
     // FINALS
-    public static final int WIDTH = 1500;
-    public static final int HEIGHT = 1000;
+    public static final int WIDTH = 1000;
+    public static final int HEIGHT = 900;
 
     // Eigenschaften
     private List<Car> cars = new LinkedList<>();
@@ -15,8 +15,10 @@ public class Model {
 
     // Konstruktoren
     public Model() {
-        this.cars.add(new Car(40, 20, 0.1f));
-        this.cars.add(new Car(40, 80, 0.6f));
+        this.cars.add(new Car(0, 355, 0.7f));
+        this.cars.add(new Car(0, 455, 0.5f));
+        this.cars.add(new Car(0, 555, 0.3f));
+        this.cars.add(new Car(0, 655, 0.1f));
         this.player = new Player(40, 120);
     }
 
