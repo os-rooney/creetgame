@@ -15,9 +15,9 @@ public class Model {
 
     // Konstruktoren
     public Model() {
-        for(int i = -1000; i < 1000; i+=10){
+        for(int i = -1000; i < 10000; i+=10){
             this.cars.add(new Car(i*85, 355, 0.6f));
-            this.cars.add(new Car(i*80, 460, 0.4f));
+            this.cars.add(new Car(i*65, 460, 0.4f));
             this.cars.add(new Car(i*55, 565, 0.3f));
             this.cars.add(new Car(i*35, 670, 0.2f));
         }
