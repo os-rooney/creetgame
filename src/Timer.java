@@ -24,11 +24,11 @@ public class Timer extends AnimationTimer {
         } else {
             elapsedTime = nowMilli - previousTime;
         }
-
         previousTime = nowMilli;
 
         model.update(elapsedTime);
         graphics.draw();
 
     }
+
 }

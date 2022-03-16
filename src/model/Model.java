@@ -15,11 +15,14 @@ public class Model {
 
     // Konstruktoren
     public Model() {
-        this.cars.add(new Car(0, 355, 0.7f));
-        this.cars.add(new Car(0, 460, 0.6f));
-        this.cars.add(new Car(0, 565, 0.5f));
-        this.cars.add(new Car(0, 670, 0.3f));
-        this.player = new Player(450, 650);
+        for(int i = -1000; i < 1000; i+=10){
+            this.cars.add(new Car(i*150, 355, 0.7f));
+            this.cars.add(new Car(i*100, 460, 0.6f));
+            this.cars.add(new Car(i*65, 565, 0.5f));
+            this.cars.add(new Car(i*35, 670, 0.3f));
+        }
+
+        this.player = new Player(450, 750);
     }
 
     // Methoden
@@ -27,6 +30,10 @@ public class Model {
         for (Car car : cars){
             car.update(elapsedTime);
         }
+    }
+
+    public void generateCars(){
+
     }
 
     // Setter + Getter
