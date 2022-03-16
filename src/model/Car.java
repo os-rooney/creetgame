@@ -13,8 +13,8 @@ public class Car {
     public Car(int x, int y, float speedX) {
         this.x = x;
         this.y = y;
-        this.h = 20;
-        this.w = 60;
+        this.h = 50;
+        this.w = 100;
         this.speedX = speedX;
     }
 
