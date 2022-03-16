@@ -51,13 +51,7 @@ public class MainSpiel extends Application {
         scene.setOnKeyPressed(
                 event -> inputHandler.onKeyPressed(event.getCode())
         );
-
-        canvas.setOnMouseClicked(
-                event -> inputHandler.onMouseClicked(
-                        (int)event.getX(),
-                        (int)event.getY()
-                )
-        );
+        
 
     }
 

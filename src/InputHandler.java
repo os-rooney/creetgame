@@ -27,10 +27,4 @@ public class InputHandler {
         }
     }
 
-    public void onMouseClicked (int x, int y){
-        model.getPlayer().move(
-                x - model.getPlayer().getX(),
-                y - model.getPlayer().getY()
-        );
-    }
 }
