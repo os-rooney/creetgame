@@ -15,11 +15,11 @@ public class Model {
 
     // Konstruktoren
     public Model() {
-        this.cars.add(new Car(0, 355, 0.1f));
-        this.cars.add(new Car(0, 460, 0.1f));
-        this.cars.add(new Car(0, 565, 0.1f));
-        this.cars.add(new Car(0, 670, 0.1f));
-        this.player = new Player(40, 120);
+        this.cars.add(new Car(0, 355, 0.7f));
+        this.cars.add(new Car(0, 460, 0.6f));
+        this.cars.add(new Car(0, 565, 0.5f));
+        this.cars.add(new Car(0, 670, 0.3f));
+        this.player = new Player(450, 650);
     }
 
     // Methoden

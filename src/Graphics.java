@@ -37,7 +37,6 @@ public class Graphics {
         gc.fillRect(0, 300, 1000, 4);
         gc.fillRect(0, 715, 1000, 4);
 
-
         // Draw Cars
         for (Car car : this.model.getCars()) {
             gc.setFill(Color.YELLOW);
@@ -50,12 +49,11 @@ public class Graphics {
             );
         }
 
-
         // Draw Player
         gc.setFill(Color.GREEN);
-        gc.fillOval(
-                (model.getPlayer().getX() - model.getPlayer().getW()/2) + 450,
-                (model.getPlayer().getY() - model.getPlayer().getH()/2) + 650,
+        gc.fillRect(
+                model.getPlayer().getX() - model.getPlayer().getW()/2,
+                model.getPlayer().getY() - model.getPlayer().getH()/2,
                 model.getPlayer().getW(),
                 model.getPlayer().getH()
         );

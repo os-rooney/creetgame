@@ -40,4 +40,11 @@ public class Player {
         return w;
     }
 
+    public void setH(int h) {
+        this.h = h;
+    }
+
+    public void setW(int w) {
+        this.w = w;
+    }
 }

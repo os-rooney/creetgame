@@ -13,7 +13,6 @@ public class MainSpiel extends Application {
 
     // Eigenschaften initialisieren
     private Timer timer;
-
     // Konstruktoren
 
     // Methoden
@@ -51,7 +50,7 @@ public class MainSpiel extends Application {
         scene.setOnKeyPressed(
                 event -> inputHandler.onKeyPressed(event.getCode())
         );
-        
+
 
     }
 
@@ -60,4 +59,5 @@ public class MainSpiel extends Application {
         timer.stop();
         super.stop();
     }
+
 }
