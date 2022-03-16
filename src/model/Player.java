@@ -9,9 +9,9 @@ public class Player {
     private int w;
 
     // Konstruktoren
-    public Player(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Player() {
+        this.x = 450;
+        this.y = 750;
         this.h = 30;
         this.w = 30;
     }
@@ -21,7 +21,10 @@ public class Player {
         this.x += dx;
         this.y += dy;
     }
-
+    public void restart(){
+        this.x = 450;
+        this.y = 750;
+    }
 
     // Getter + Setter
     public int getX() {

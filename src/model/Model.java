@@ -22,7 +22,7 @@ public class Model {
             this.cars.add(new Car(i*35, 670, 0.2f));
         }
 
-        this.player = new Player(450, 750);
+        this.player = new Player();
     }
 
     // Methoden
@@ -32,9 +32,6 @@ public class Model {
         }
     }
 
-    public void generateCars(){
-
-    }
 
     // Setter + Getter
     public List<Car> getCars() {

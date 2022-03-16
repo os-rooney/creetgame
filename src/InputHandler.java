@@ -24,6 +24,8 @@ public class InputHandler {
         }
         else if(key == KeyCode.RIGHT) {
             model.getPlayer().move(30,0);
+        } else if(key == KeyCode.R){
+            model.getPlayer().restart();
         }
     }
 
