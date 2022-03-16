@@ -29,6 +29,9 @@ public class Timer extends AnimationTimer {
         model.update(elapsedTime);
         graphics.draw();
 
+        // Keep the player in the game area
+        model.getPlayer().checkPlayerPositionX();
+        model.getPlayer().checkPlayerPositionY();
     }
 
 }

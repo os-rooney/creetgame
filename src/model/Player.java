@@ -21,9 +21,28 @@ public class Player {
         this.x += dx;
         this.y += dy;
     }
+    // return the player to the start point
     public void restart(){
         this.x = 450;
         this.y = 750;
+    }
+
+    // Check if the player is inside the game area - X axis
+    public void checkPlayerPositionX(){
+        if(this.getX() >= 1000){
+            this.setX(985);
+        } else if(this.getX() <= 0){
+            this.setX(15);
+        }
+    }
+
+    // Check if the player is inside the game area - Y axis
+    public void checkPlayerPositionY(){
+        if(this.getY() >= 900){
+            this.setY(885);
+        } else if(this.getY() <= 0){
+            this.setY(15);
+        }
     }
 
     // Getter + Setter
@@ -41,6 +60,14 @@ public class Player {
 
     public int getW() {
         return w;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     public void setH(int h) {

@@ -32,7 +32,6 @@ public class Model {
         }
     }
 
-
     // Setter + Getter
     public List<Car> getCars() {
         return cars;
