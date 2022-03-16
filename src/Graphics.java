@@ -21,7 +21,7 @@ public class Graphics {
     public void draw() {
 
         // Clear Screen
-        gc.setFill(Color.rgb(226,226,226));
+        gc.setFill(Color.rgb(218,218,218));
         gc.fillRect(0,0, Model.WIDTH, Model.HEIGHT);
 
         // Draw road marking
@@ -54,8 +54,8 @@ public class Graphics {
         // Draw Player
         gc.setFill(Color.GREEN);
         gc.fillOval(
-                model.getPlayer().getX() - model.getPlayer().getW()/2,
-                model.getPlayer().getY() - model.getPlayer().getH()/2,
+                (model.getPlayer().getX() - model.getPlayer().getW()/2) + 450,
+                (model.getPlayer().getY() - model.getPlayer().getH()/2) + 650,
                 model.getPlayer().getW(),
                 model.getPlayer().getH()
         );
