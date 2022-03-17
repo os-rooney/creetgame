@@ -15,7 +15,7 @@ public class Car {
     public Car(int x, int y, float speedX) {
         this.x = x;
         this.y = y;
-        this.h = 50;
+        this.h = 40;
         this.w = 100;
         this.speedX = speedX;
     }

@@ -31,7 +31,7 @@ public class Player {
 
     // end player movement
     public void won(){
-        this.y = 140;
+        this.y = 110;
     }
 
     // Check if the player is inside the game area - X axis

@@ -16,10 +16,10 @@ public class Model {
     // Konstruktoren
     public Model() {
         for(int i = -1000; i < 10000; i+=8){
-            this.cars.add(new Car(i*65, 225, -0.1f));
-            this.cars.add(new Car(i*95, 325, 0.1f));
-            this.cars.add(new Car(i*40, 425, -0.1f));
-            this.cars.add(new Car(i*35, 525, 0.1f));
+            this.cars.add(new Car(i*65, 235, -0.3f));
+            this.cars.add(new Car(i*45, 335, 0.2f));
+            this.cars.add(new Car(i*40, 435, -0.15f));
+            this.cars.add(new Car(i*35, 535, 0.1f));
         }
         this.player = new Player();
     }
@@ -56,11 +56,15 @@ public class Model {
 
     // check if the car hits the player from font on the left side (collision)
     public boolean checkIfCarHitsPlayerFromFrontLeft(Car car, boolean collided){
-            if(player.getX() >= car.getX() &&
-                    (player.getX() + player.getW()) <=  (car.getX() + car.getW())){
+            if((player.getX() >= car.getX() &&
+                    (player.getX() + player.getW()) <=  (car.getX() + car.getW())) ||
+                    (player.getX() >= car.getX() &&
+                            (player.getX() - player.getW()) <=  (car.getX() - car.getW()))){
 
-                if(player.getY() >= car.getY() &&
-                        (player.getY() + player.getH() <= (car.getY() + car.getH()))){
+                if((player.getY() >= car.getY() &&
+                        (player.getY() + player.getH() <= (car.getY() + car.getH()))) ||
+                        (player.getY() >= car.getY() &&
+                                (player.getY() - player.getH() <= (car.getY() + car.getH() - 30 )))){
                     collided = true;
                 }
             }
