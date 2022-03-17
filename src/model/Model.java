@@ -46,6 +46,15 @@ public class Model {
         return collided;
     }
 
+    // End Game - You Win
+    public void youWin(){
+        System.out.println("CONGRATULATIONS - YOU WIN");
+        getPlayer().restart();
+        if(getPlayer().getW() != 60) {
+            getPlayer().setW(getPlayer().getW() + 5);
+            getPlayer().setH(getPlayer().getW() + 5);
+        }
+    }
 
     // Setter + Getter
     public List<Car> getCars() {
