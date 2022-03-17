@@ -17,9 +17,9 @@ public class Model {
     public Model() {
         for(int i = -1000; i < 10000; i+=10){
             this.cars.add(new Car(-i*85, 355, -0.1f));
-            this.cars.add(new Car(i*65, 460, 0.1f));
-            this.cars.add(new Car(-i*55, 565, -0.1f));
-            this.cars.add(new Car(i*35, 670, 0.1f));
+            //this.cars.add(new Car(i*65, 460, 0.1f));
+            //this.cars.add(new Car(-i*55, 565, -0.1f));
+            //this.cars.add(new Car(i*35, 670, 0.1f));
         }
         this.player = new Player();
     }
@@ -52,7 +52,18 @@ public class Model {
         getPlayer().restart();
         if(getPlayer().getW() != 60) {
             getPlayer().setW(getPlayer().getW() + 5);
-            getPlayer().setH(getPlayer().getW() + 5);
+            getPlayer().setH(getPlayer().getH() + 5);
+        }
+    }
+
+    // accident
+    public void accident(){
+        if(getPlayer().getW() == 30){
+            getPlayer().restart();
+        }
+        if(getPlayer().getW() >= 30){
+            getPlayer().setW(getPlayer().getW() - 5);
+            getPlayer().setH(getPlayer().getH() - 5);
         }
     }
 
