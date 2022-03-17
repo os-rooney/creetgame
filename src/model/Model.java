@@ -1,6 +1,7 @@
 package model;
 
-import java.awt.*;
+import javafx.scene.text.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,6 @@ public class Model {
     // Eigenschaften
     private List<Car> cars = new ArrayList<Car>();
     private Player player;
-
     // Konstruktoren
     public Model() {
         for(int i = -10000; i < 800; i+=10){
@@ -93,4 +93,5 @@ public class Model {
     public Player getPlayer() {
         return player;
     }
+
 }

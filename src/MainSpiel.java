@@ -36,6 +36,7 @@ public class MainSpiel extends Application {
 
         // Stage
         stage.setScene(scene);
+        stage.setTitle("Creet Game");
         stage.show();
 
         // Draw

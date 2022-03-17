@@ -1,7 +1,7 @@
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
+import javafx.scene.text.Font;
 import model.Car;
 import model.Model;
 
@@ -24,14 +24,10 @@ public class Graphics {
     // Methoden
     public void drawStartPage(){
         // Clear Screen
-        gc.setFill(Color.DARKSLATEGREY);
-        gc.fillRect(0,0, Model.WIDTH, Model.HEIGHT);
-
-        // Import Image
-        Image startImage = new Image("https://media0.giphy.com/media/QJvwBSGaoc4eI/giphy.gif?cid=ecf05e47c7kcz5lk86hyoiykvfgkpxs8n736ls7d5v9iprq0&rid=giphy.gif&ct=g");
-        ImageView startPattern = new ImageView(startImage);
-
-
+        Image img = new Image("img\\carGreen.PNG");
+        gc.drawImage(img, 430, 350, 100, 50);
+        gc.setFont(new Font("Arial", 24));
+        gc.fillText("Press ENTER to start the game", 320, 450);
     }
 
 
@@ -40,6 +36,8 @@ public class Graphics {
         // Clear Screen
         gc.setFill(Color.DARKSLATEGREY);
         gc.fillRect(0,0, Model.WIDTH, Model.HEIGHT);
+
+
 
         // Draw road marking
         for (int i = 0; i < Model.WIDTH; i+=70) {
