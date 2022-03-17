@@ -40,12 +40,10 @@ public class Graphics {
         // Draw Cars
         for (Car car : this.model.getCars()) {
             gc.setFill(Color.YELLOW);
-            gc.fillRoundRect(car.getX() - car.getW()/2,
+            gc.fillRect(car.getX() - car.getW()/2,
                     car.getY() - car.getH()/2,
                     car.getW(),
-                    car.getH(),
-                    7,
-                    100
+                    car.getH()
             );
         }
 
