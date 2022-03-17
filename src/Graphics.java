@@ -27,21 +27,21 @@ public class Graphics {
         // Draw road marking
         for (int i = 0; i < Model.WIDTH; i+=70) {
             gc.setFill(Color.BLACK);
-            gc.fillRect(10 + i, 405, 30, 5);
-            gc.fillRect(10 + i, 510, 30, 5);
-            gc.fillRect(10 + i, 615, 30, 5);
+            gc.fillRect(10 + i, 300, 30, 5);
+            gc.fillRect(10 + i, 400, 30, 5);
+            gc.fillRect(10 + i, 500, 30, 5);
         }
 
         // Draw sidewalks
         gc.setFill(Color.BLACK);
-        gc.fillRect(0, 300, 1000, 4);
-        gc.fillRect(0, 715, 1000, 4);
+        gc.fillRect(0, 200, 1000, 4);
+        gc.fillRect(0, 600, 1000, 4);
 
         // Draw Cars
         for (Car car : this.model.getCars()) {
             gc.setFill(Color.YELLOW);
-            gc.fillRect(car.getX() - car.getW()/2,
-                    car.getY() - car.getH()/2,
+            gc.fillRect(car.getX(),
+                    car.getY(),
                     car.getW(),
                     car.getH()
             );

@@ -32,7 +32,7 @@ public class Timer extends AnimationTimer {
             model.getPlayer().restart();
         }
 
-        if(model.getPlayer().getY() <= 245){
+        if(model.getPlayer().getY() <= 140){
             model.youWin();
         }
 

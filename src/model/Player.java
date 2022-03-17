@@ -12,8 +12,8 @@ public class Player {
 
     // Konstruktoren
     public Player() {
-        this.x = 450;
-        this.y = 750;
+        this.x = 470;
+        this.y = 650;
         this.h = 30;
         this.w = 30;
     }
@@ -25,13 +25,13 @@ public class Player {
     }
     // return the player to the start point
     public void restart(){
-        this.x = 450;
-        this.y = 750;
+        this.x = 470;
+        this.y = 650;
     }
 
     // end player movement
     public void won(){
-        this.y = 240;
+        this.y = 140;
     }
 
     // Check if the player is inside the game area - X axis
@@ -45,8 +45,8 @@ public class Player {
 
     // Check if the player is inside the game area - Y axis
     public void checkPlayerPositionY(){
-        if(this.getY() >= 885){
-            this.setY(870);
+        if(this.getY() >= 685){
+            this.setY(670);
         } else if(this.getY() <= 0){
             this.setY(15);
         }
