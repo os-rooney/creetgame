@@ -26,7 +26,10 @@ public class InputHandler {
             model.getPlayer().move(50,0);
         } else if(key == KeyCode.R){
             model.getPlayer().restart();
+        } else if(key == KeyCode.ENTER){
+            model.START_GAME = true;
         }
+
     }
 
 }

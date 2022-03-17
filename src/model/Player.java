@@ -45,8 +45,8 @@ public class Player {
 
     // Check if the player is inside the game area - Y axis
     public void checkPlayerPositionY(){
-        if(this.getY() >= 975){
-            this.setY(1000);
+        if(this.getY() >= 900){
+            this.setY(900);
         } else if(this.getY() <= 0){
             this.setY(15);
         }

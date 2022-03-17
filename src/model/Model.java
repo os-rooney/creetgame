@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ public class Model {
     // FINALS
     public static final int WIDTH = 1000;
     public static final int HEIGHT = 1000;
+    public static boolean START_GAME = false;
 
     // Eigenschaften
     private List<Car> cars = new ArrayList<Car>();
@@ -27,6 +29,8 @@ public class Model {
         }
         this.player = new Player();
     }
+
+
 
     // Methoden
     public void update (long elapsedTime) {
@@ -56,6 +60,7 @@ public class Model {
     public void accident(){
         System.out.println("Accident");
         getPlayer().restart();
+
     }
 
     // check if the car hits the player from font (collision)
@@ -75,6 +80,10 @@ public class Model {
         return collided;
 
     }
+
+    // check driving direction to add the right pic of car and give it a color randomly
+
+
 
     // Setter + Getter
     public List<Car> getCars() {
