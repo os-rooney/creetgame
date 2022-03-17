@@ -27,7 +27,15 @@ public class Timer extends AnimationTimer {
         previousTime = nowMilli;
 
         model.update(elapsedTime);
-        model.checkCollision();
+
+        if(model.checkCollision()){
+        model.getPlayer().restart();
+        }
+
+        if(model.checkIfPlayerCrossedStreet()){
+            model.getPlayer().won();
+        }
+
         graphics.draw();
 
         // Keep the player in the game area

@@ -27,6 +27,11 @@ public class Player {
         this.y = 750;
     }
 
+    // end player movement
+    public void won(){
+        this.y = 240;
+    }
+
     // Check if the player is inside the game area - X axis
     public void checkPlayerPositionX(){
         if(this.getX() >= 1000){

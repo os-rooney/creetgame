@@ -16,9 +16,9 @@ public class Model {
     // Konstruktoren
     public Model() {
         for(int i = -1000; i < 10000; i+=10){
-            this.cars.add(new Car(-i*85, 355, -0.4f));
-            this.cars.add(new Car(i*65, 460, 0.5f));
-            this.cars.add(new Car(-i*55, 565, -0.3f));
+            this.cars.add(new Car(-i*85, 355, -0.1f));
+            this.cars.add(new Car(i*65, 460, 0.1f));
+            this.cars.add(new Car(-i*55, 565, -0.1f));
             this.cars.add(new Car(i*35, 670, 0.1f));
         }
         this.player = new Player();
@@ -32,7 +32,7 @@ public class Model {
     }
 
     // Collision detection
-    public void checkCollision(){
+    public boolean checkCollision(){
         boolean collided = false;
         for (Car car: cars) {
             if(player.getX() >= car.getX() &&
@@ -43,9 +43,17 @@ public class Model {
                     }
             }
         }
-        System.out.println(collided + " collision?");
+        return collided;
     }
 
+
+    // Check if the player crossed the street
+    public boolean checkIfPlayerCrossedStreet(){
+        if(player.getY() <= 240){
+            return true;
+        }
+        return false;
+    }
 
     // Setter + Getter
     public List<Car> getCars() {
