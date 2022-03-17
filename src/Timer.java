@@ -29,7 +29,6 @@ public class Timer extends AnimationTimer {
         model.update(elapsedTime);
 
         if(model.checkCollision()){
-            model.accident();
             model.getPlayer().restart();
         }
 

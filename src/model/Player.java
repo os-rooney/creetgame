@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.*;
+
 public class Player {
 
     // Eigenschaften
@@ -34,17 +36,17 @@ public class Player {
 
     // Check if the player is inside the game area - X axis
     public void checkPlayerPositionX(){
-        if(this.getX() >= 1000){
-            this.setX(985);
+        if(this.getX() >= 970){
+            this.setX(970);
         } else if(this.getX() <= 0){
-            this.setX(15);
+            this.setX(0);
         }
     }
 
     // Check if the player is inside the game area - Y axis
     public void checkPlayerPositionY(){
-        if(this.getY() >= 900){
-            this.setY(885);
+        if(this.getY() >= 885){
+            this.setY(870);
         } else if(this.getY() <= 0){
             this.setY(15);
         }
