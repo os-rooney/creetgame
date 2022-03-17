@@ -52,8 +52,8 @@ public class Graphics {
         // Draw Player
         gc.setFill(Color.GREEN);
         gc.fillRect(
-                model.getPlayer().getX() - model.getPlayer().getW()/2,
-                model.getPlayer().getY() - model.getPlayer().getH()/2,
+                model.getPlayer().getX(),
+                model.getPlayer().getY(),
                 model.getPlayer().getW(),
                 model.getPlayer().getH()
         );

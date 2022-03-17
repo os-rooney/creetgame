@@ -27,6 +27,7 @@ public class Timer extends AnimationTimer {
         previousTime = nowMilli;
 
         model.update(elapsedTime);
+        model.checkCollision();
         graphics.draw();
 
         // Keep the player in the game area

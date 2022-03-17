@@ -16,12 +16,11 @@ public class Model {
     // Konstruktoren
     public Model() {
         for(int i = -1000; i < 10000; i+=10){
-            this.cars.add(new Car(i*85, 355, 0.6f));
-            this.cars.add(new Car(i*65, 460, 0.4f));
-            this.cars.add(new Car(i*55, 565, 0.3f));
-            this.cars.add(new Car(i*35, 670, 0.2f));
+            this.cars.add(new Car(-i*85, 355, -0.4f));
+            this.cars.add(new Car(i*65, 460, 0.5f));
+            this.cars.add(new Car(-i*55, 565, -0.3f));
+            this.cars.add(new Car(i*35, 670, 0.1f));
         }
-
         this.player = new Player();
     }
 
@@ -31,6 +30,22 @@ public class Model {
             car.update(elapsedTime);
         }
     }
+
+    // Collision detection
+    public void checkCollision(){
+        boolean collided = false;
+        for (Car car: cars) {
+            if(player.getX() >= car.getX() &&
+                    (player.getX() + player.getW()) <=  (car.getX() + car.getW())){
+
+                    if(player.getY() <= car.getY() && (player.getY() + player.getH()) <= (car.getY() + car.getH())){
+                        collided = true;
+                    }
+            }
+        }
+        System.out.println(collided + " collision?");
+    }
+
 
     // Setter + Getter
     public List<Car> getCars() {
