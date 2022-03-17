@@ -32,9 +32,7 @@ public class Timer extends AnimationTimer {
         model.getPlayer().restart();
         }
 
-        if(model.checkIfPlayerCrossedStreet()){
-            model.getPlayer().won();
-        }
+        //if(model.getPlayer().getY() <= 245){}
 
         graphics.draw();
 

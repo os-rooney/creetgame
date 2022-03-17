@@ -47,14 +47,6 @@ public class Model {
     }
 
 
-    // Check if the player crossed the street
-    public boolean checkIfPlayerCrossedStreet(){
-        if(player.getY() <= 240){
-            return true;
-        }
-        return false;
-    }
-
     // Setter + Getter
     public List<Car> getCars() {
         return cars;

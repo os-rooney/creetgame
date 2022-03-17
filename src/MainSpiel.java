@@ -51,7 +51,6 @@ public class MainSpiel extends Application {
                 event -> inputHandler.onKeyPressed(event.getCode())
         );
 
-
     }
 
     @Override
