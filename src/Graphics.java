@@ -5,7 +5,8 @@ import model.Car;
 import model.Model;
 
 import java.awt.*;
-import java.text.FieldPosition;
+import javafx.scene.image.Image;
+
 
 public class Graphics {
 
@@ -43,30 +44,26 @@ public class Graphics {
         gc.fillRect(0, 850, 1000, 4);
 
         // Draw Cars
-        
+        Image carImage = new Image("img\\car.png");
+        Image carImageReversed = new Image("img\\carReversed.png");
+        ImagePattern pattern = new ImagePattern(carImage);
+        ImagePattern patternReversed = new ImagePattern(carImageReversed);
         for (Car car : this.model.getCars()) {
-            if(car.getId() == 1){
-                gc.setFill(Color.YELLOW);
-                gc.fillRect(car.getX(),
-                        car.getY(),
-                        car.getW(),
-                        car.getH()
-                );
-            }else if(car.getId()==2){
-                gc.setFill(Color.RED);
-                gc.fillRect(car.getX(),
-                        car.getY(),
-                        car.getW(),
-                        car.getH()
-                );
-            } else if(car.getId()==3){
-                gc.setFill(Color.BLUE);
-                gc.fillRect(car.getX(),
-                        car.getY(),
-                        car.getW(),
-                        car.getH()
-                );
-            }
+                if(car.getSpeedX() < 0){
+                    gc.setFill(patternReversed);
+                    gc.fillRect(car.getX(),
+                            car.getY(),
+                            car.getW(),
+                            car.getH()
+                    );
+                } else {
+                    gc.setFill(pattern);
+                    gc.fillRect(car.getX(),
+                            car.getY(),
+                            car.getW(),
+                            car.getH()
+                    );
+                }
         }
 
         // Draw Player

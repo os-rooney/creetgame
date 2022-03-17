@@ -15,13 +15,13 @@ public class Model {
 
     // Konstruktoren
     public Model() {
-        for(int i = -10000; i < 10000; i+=8){
+        for(int i = -10000; i < 800; i+=10){
             int random = (int)(Math.random() * 3)+1;
-            this.cars.add(new Car(i*80, 180, -1f, random));
+            this.cars.add(new Car(i*80, 180, -.8f, random));
             this.cars.add(new Car(i*155, 280, -0.5f, random));
             this.cars.add(new Car(i*135, 380, -0.7f,  random));
             this.cars.add(new Car(i*30, 480, 0.1f, random));
-            this.cars.add(new Car(i*110, 580, -0.5f, random));
+            this.cars.add(new Car(i*110, 580, -0.7f, random));
             this.cars.add(new Car(i*65, 680, 0.9f, random));
             this.cars.add(new Car(i*75, 780, 0.6f, random));
         }
