@@ -13,9 +13,9 @@ public class Player {
     // Konstruktoren
     public Player() {
         this.x = 470;
-        this.y = 650;
-        this.h = 30;
-        this.w = 30;
+        this.y = 900;
+        this.h = 25;
+        this.w = 25;
     }
 
     // Methoden
@@ -26,12 +26,12 @@ public class Player {
     // return the player to the start point
     public void restart(){
         this.x = 470;
-        this.y = 650;
+        this.y = 900;
     }
 
     // end player movement
     public void won(){
-        this.y = 110;
+        this.y = 900;
     }
 
     // Check if the player is inside the game area - X axis
@@ -45,8 +45,8 @@ public class Player {
 
     // Check if the player is inside the game area - Y axis
     public void checkPlayerPositionY(){
-        if(this.getY() >= 685){
-            this.setY(670);
+        if(this.getY() >= 975){
+            this.setY(1000);
         } else if(this.getY() <= 0){
             this.setY(15);
         }

@@ -10,14 +10,16 @@ public class Car {
     private int h;
     private int w;
     private float speedX;
+    private int id;
 
     // Konstruktoren
-    public Car(int x, int y, float speedX) {
+    public Car(int x, int y, float speedX, int id) {
         this.x = x;
         this.y = y;
         this.h = 40;
         this.w = 100;
         this.speedX = speedX;
+        this.id = id;
     }
 
     // Methoden
@@ -28,6 +30,10 @@ public class Car {
     // Setter + Getter
     public int getX() {
         return x;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getY() {

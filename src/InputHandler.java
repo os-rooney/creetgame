@@ -14,16 +14,16 @@ public class InputHandler {
     // Methoden
     public void onKeyPressed(KeyCode key) {
         if (key == KeyCode.UP) {
-            model.getPlayer().move(0,-30);
+            model.getPlayer().move(0,-100);
         }
         else if(key == KeyCode.DOWN) {
-            model.getPlayer().move(0,30);
+            model.getPlayer().move(0,100);
         }
         else if(key == KeyCode.LEFT) {
-            model.getPlayer().move(-30,0);
+            model.getPlayer().move(-50,0);
         }
         else if(key == KeyCode.RIGHT) {
-            model.getPlayer().move(30,0);
+            model.getPlayer().move(50,0);
         } else if(key == KeyCode.R){
             model.getPlayer().restart();
         }

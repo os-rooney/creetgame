@@ -7,7 +7,7 @@ public class Model {
 
     // FINALS
     public static final int WIDTH = 1000;
-    public static final int HEIGHT = 700;
+    public static final int HEIGHT = 1000;
 
     // Eigenschaften
     private List<Car> cars = new ArrayList<Car>();
@@ -15,11 +15,15 @@ public class Model {
 
     // Konstruktoren
     public Model() {
-        for(int i = -1000; i < 10000; i+=8){
-            this.cars.add(new Car(i*65, 235, -0.4f));
-            this.cars.add(new Car(i*50, 335, 0.3f));
-            this.cars.add(new Car(i*40, 435, -0.25f));
-            this.cars.add(new Car(i*35, 535, 0.2f));
+        for(int i = -10000; i < 10000; i+=8){
+            int random = (int)(Math.random() * 3)+1;
+            this.cars.add(new Car(i*80, 180, -1f, random));
+            this.cars.add(new Car(i*155, 280, -0.5f, random));
+            this.cars.add(new Car(i*135, 380, -0.7f,  random));
+            this.cars.add(new Car(i*30, 480, 0.1f, random));
+            this.cars.add(new Car(i*110, 580, -0.5f, random));
+            this.cars.add(new Car(i*65, 680, 0.9f, random));
+            this.cars.add(new Car(i*75, 780, 0.6f, random));
         }
         this.player = new Player();
     }
@@ -64,7 +68,7 @@ public class Model {
             if((player.getY() >= car.getY() &&
                     (player.getY() + player.getH() <= (car.getY() + car.getH()))) ||
                     (player.getY() >= car.getY() &&
-                            (player.getY() - player.getH() <= (car.getY() + car.getH() - 30 )))){
+                            (player.getY() - player.getH() <= (car.getY() )))){
                 collided = true;
             }
         }
