@@ -68,16 +68,28 @@ public class Model {
      */
     public boolean checkIfCarHitsPlayer(Car car, boolean collided){
         // check collisions on X axis
-        if((player.getX() >= car.getX() &&
-                (player.getX() + player.getW()) <=  (car.getX() + car.getW())) ||
-                (player.getX() >= car.getX() &&
-                        (player.getX() - player.getW()) <=  (car.getX() - car.getW()))){
+        int playerAreaOnXAxis = player.getX() + player.getW();
+        int carAreaOnXAxis = car.getX() + car.getW();
+        int carAreaOnYAxis = car.getY() + car.getH();
+        int playerAreaOnYAxis = player.getY() + player.getH();
+        int playerOnY = player.getY();
+        int carOnY = car.getY();
+        int playerOnX = player.getX();
+        int carOnX = car.getX();
+        int playerWidth = player.getW();
+        int playerHeight = player.getW();
+        int carWidth = car.getW();
+
+        if((playerOnX >= carOnX &&
+                (playerAreaOnXAxis) <=  (carAreaOnXAxis)) ||
+                (playerOnX >= carOnX &&
+                        (playerOnX - playerWidth) <=  (carOnX - carWidth))){
 
             // check collisions on Y axis
-            if((player.getY() >= car.getY() &&
-                    (player.getY() + player.getH() <= (car.getY() + car.getH()))) ||
-                    (player.getY() >= car.getY() &&
-                            (player.getY() - player.getH() <= (car.getY() )))){
+            if((playerOnY >= carOnY &&
+                    (playerAreaOnYAxis <= (carAreaOnYAxis))) ||
+                    (playerOnY >= carOnY &&
+                            (playerOnY - playerHeight <= (carOnY)))){
                 collided = true;
             }
         }
