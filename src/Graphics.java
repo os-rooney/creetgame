@@ -41,7 +41,17 @@ public class Graphics {
         gc.fillText("Press R to restart the game", 400, 470);
     }
 
-
+    public void drawWinPage(){
+        gc.setFill(Color.WHITE);
+        gc.fillRect(0, 0, model.HEIGHT, model.WIDTH);
+        gc.setFill(Color.BLACK);
+        Image img = new Image("img\\winner.PNG");
+        gc.drawImage(img, 430, 350, 200, 180);
+        gc.setFont(new Font("Arial", 24));
+        gc.fillText("Congratulations! You win!!", 380, 570);
+        gc.setFont(new Font("Arial", 14));
+        gc.fillText("Press R to play again!", 450, 590);
+    }
 
     public void draw() {
 
