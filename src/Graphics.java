@@ -22,6 +22,8 @@ public class Graphics {
     }
 
     // Methoden
+
+    // Start Page
     public void drawStartPage(){
         Image img = new Image("img\\carGreen.PNG");
         gc.drawImage(img, 430, 350, 100, 50);
@@ -29,6 +31,7 @@ public class Graphics {
         gc.fillText("Press ENTER to start the game", 320, 450);
     }
 
+    // Crashed Page - in case of collision this page will pop up
     public void drawCrashedPage(){
         gc.setFill(Color.WHITE);
         gc.fillRect(0, 0, model.HEIGHT, model.WIDTH);
@@ -41,6 +44,7 @@ public class Graphics {
         gc.fillText("Press R to restart the game", 400, 470);
     }
 
+    // Win Page - when player crosses the street this page will pop up
     public void drawWinPage(){
         gc.setFill(Color.WHITE);
         gc.fillRect(0, 0, model.HEIGHT, model.WIDTH);
@@ -53,6 +57,7 @@ public class Graphics {
         gc.fillText("Press R to play again!", 450, 590);
     }
 
+    // Game Graphics
     public void draw() {
 
         // Clear Screen
@@ -63,6 +68,7 @@ public class Graphics {
 
         // Draw road marking
         for (int i = 0; i < Model.WIDTH; i+=70) {
+            // street lanes coordination
             gc.setFill(Color.WHITE);
             gc.fillRect(10 + i, 250, 30, 5);
             gc.fillRect(10 + i, 350, 30, 5);
@@ -88,6 +94,7 @@ public class Graphics {
         ImagePattern patternReversedR = new ImagePattern(carImageRedReversed);
         ImagePattern patternR = new ImagePattern(carImageRed);
 
+        // Create cars depending on the given ID and driving direction
         for (Car car : this.model.getCars()) {
                 if(car.getSpeedX() < 0){
                     if(car.getId() % 2 == 0){

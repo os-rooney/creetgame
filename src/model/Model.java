@@ -13,10 +13,11 @@ public class Model {
     public static boolean LOSE_GAME = false;
 
 
-    // Eigenschaften
+    // Properties
     private List<Car> cars = new ArrayList<Car>();
     private Player player;
-    // Konstruktoren
+
+    // Konstructors
     public Model() {
         for(int i = -10000; i < 800; i+=10){
             int random = (int)(Math.random() * 3)+1;
@@ -31,9 +32,7 @@ public class Model {
         this.player = new Player();
     }
 
-
-
-    // Methoden
+    // Methods
     public void update (long elapsedTime) {
         for (Car car : cars){
             car.update(elapsedTime);
@@ -44,7 +43,7 @@ public class Model {
     public boolean checkCollision(){
         boolean collided = false;
         for(Car car : cars){
-            if(checkIfCarHitsPlayerFromFront(car, collided)){
+            if(checkIfCarHitsPlayer(car, collided)){
                 accident();
             }
         }
@@ -53,24 +52,28 @@ public class Model {
 
     // End Game - You Win
     public void youWin(){
-        System.out.println("CONGRATULATIONS - YOU WIN");
-        //getPlayer().restart();
         WIN_GAME = true;
     }
 
-    // accident
+    // will be executed in case of collision
     public void accident(){
-        System.out.println("Accident");
         LOSE_GAME = true;
     }
 
-    // check if the car hits the player from font (collision)
-    public boolean checkIfCarHitsPlayerFromFront(Car car, boolean collided){
+    /**
+     * check if the car hits the player (collision)
+     * @param car
+     * @param collided
+     * @return true if a car and the player are collided
+     */
+    public boolean checkIfCarHitsPlayer(Car car, boolean collided){
+        // check collisions on X axis
         if((player.getX() >= car.getX() &&
                 (player.getX() + player.getW()) <=  (car.getX() + car.getW())) ||
                 (player.getX() >= car.getX() &&
                         (player.getX() - player.getW()) <=  (car.getX() - car.getW()))){
 
+            // check collisions on Y axis
             if((player.getY() >= car.getY() &&
                     (player.getY() + player.getH() <= (car.getY() + car.getH()))) ||
                     (player.getY() >= car.getY() &&

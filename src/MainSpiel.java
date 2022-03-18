@@ -13,13 +13,10 @@ public class MainSpiel extends Application {
 
     // Eigenschaften initialisieren
     private Timer timer;
-    // Konstruktoren
 
     // Methoden
     @Override
     public void start(Stage stage) throws Exception {
-
-
 
         /* javaFX Vorbereitungen / Stage
         /////////////////////////////////*/
@@ -51,7 +48,6 @@ public class MainSpiel extends Application {
         scene.setOnKeyPressed(
                 event -> inputHandler.onKeyPressed(event.getCode())
         );
-
     }
 
     @Override

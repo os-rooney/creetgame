@@ -36,6 +36,7 @@ public class Timer extends AnimationTimer {
             model.youWin();
         }
 
+        // Check game state to show the right page
         if(!model.START_GAME){
             graphics.drawStartPage();
         } else if(!model.LOSE_GAME && !model.WIN_GAME){
@@ -45,7 +46,7 @@ public class Timer extends AnimationTimer {
         } else if(model.WIN_GAME){
             graphics.drawWinPage();
         }
-        // Keep the player in the game area
+        // Keep the player in game area
         model.getPlayer().checkPlayerPositionX();
         model.getPlayer().checkPlayerPositionY();
     }
