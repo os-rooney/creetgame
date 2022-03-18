@@ -45,7 +45,6 @@ public class Timer extends AnimationTimer {
         } else if(model.WIN_GAME){
             graphics.drawWinPage();
         }
-        
         // Keep the player in the game area
         model.getPlayer().checkPlayerPositionX();
         model.getPlayer().checkPlayerPositionY();
