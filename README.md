@@ -9,8 +9,6 @@ git clone https://gitlab.com/os-rooney/creetgame.git
 ```
 
 ## Design Pattern
-#### State (Model) and representation (Graphics) are separate from each other
-#### The classes in Model do not import/use any classes in the packages javafx.*.
 <img src="src/img/designPattern.jpg" style="width:30rem">
 
 ## Game rules
