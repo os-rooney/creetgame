@@ -29,7 +29,7 @@ public class Timer extends AnimationTimer {
         model.update(elapsedTime);
 
         if(model.checkCollision()){
-            model.getPlayer().restart();
+            model.accident();
         }
 
         if(model.getPlayer().getY() <= 110){
@@ -38,9 +38,14 @@ public class Timer extends AnimationTimer {
 
         if(!model.START_GAME){
             graphics.drawStartPage();
-        } else {
+        } else if(!model.LOSE_GAME && !model.WIN_GAME){
             graphics.draw();
+        } else if(model.LOSE_GAME){
+            graphics.drawCrashedPage();
+        } else if(model.WIN_GAME){
+            graphics.drawWinPage();
         }
+
 
         // Keep the player in the game area
         model.getPlayer().checkPlayerPositionX();

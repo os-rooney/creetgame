@@ -24,10 +24,12 @@ public class InputHandler {
         }
         else if(key == KeyCode.RIGHT) {
             model.getPlayer().move(50,0);
-        } else if(key == KeyCode.R){
-            model.getPlayer().restart();
         } else if(key == KeyCode.ENTER){
             model.START_GAME = true;
+        } else if(key == KeyCode.R){
+            model.LOSE_GAME = false;
+            model.WIN_GAME = false;
+            model.getPlayer().restart();
         }
 
     }

@@ -1,7 +1,5 @@
 package model;
 
-import javafx.scene.text.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +9,9 @@ public class Model {
     public static final int WIDTH = 1000;
     public static final int HEIGHT = 1000;
     public static boolean START_GAME = false;
+    public static boolean WIN_GAME = false;
+    public static boolean LOSE_GAME = false;
+
 
     // Eigenschaften
     private List<Car> cars = new ArrayList<Car>();
@@ -53,14 +54,14 @@ public class Model {
     // End Game - You Win
     public void youWin(){
         System.out.println("CONGRATULATIONS - YOU WIN");
-        getPlayer().restart();
+        //getPlayer().restart();
+        WIN_GAME = true;
     }
 
     // accident
     public void accident(){
         System.out.println("Accident");
-        getPlayer().restart();
-
+        LOSE_GAME = true;
     }
 
     // check if the car hits the player from font (collision)
@@ -80,9 +81,6 @@ public class Model {
         return collided;
 
     }
-
-    // check driving direction to add the right pic of car and give it a color randomly
-
 
 
     // Setter + Getter

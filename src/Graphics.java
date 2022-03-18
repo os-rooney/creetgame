@@ -23,12 +23,24 @@ public class Graphics {
 
     // Methoden
     public void drawStartPage(){
-        // Clear Screen
         Image img = new Image("img\\carGreen.PNG");
         gc.drawImage(img, 430, 350, 100, 50);
         gc.setFont(new Font("Arial", 24));
         gc.fillText("Press ENTER to start the game", 320, 450);
     }
+
+    public void drawCrashedPage(){
+        gc.setFill(Color.WHITE);
+        gc.fillRect(0, 0, model.HEIGHT, model.WIDTH);
+        gc.setFill(Color.BLACK);
+        Image img = new Image("img\\crashed.PNG");
+        gc.drawImage(img, 430, 350, 100, 50);
+        gc.setFont(new Font("Arial", 24));
+        gc.fillText("Ooops! You lose", 400, 450);
+        gc.setFont(new Font("Arial", 14));
+        gc.fillText("Press R to restart the game", 400, 470);
+    }
+
 
 
     public void draw() {
