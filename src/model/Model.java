@@ -81,22 +81,19 @@ public class Model {
         int carWidth = car.getW();
 
         if((playerOnX >= carOnX &&
-                (playerAreaOnXAxis) <=  (carAreaOnXAxis)) ||
-                (playerOnX >= carOnX &&
-                        (playerOnX - playerWidth) <=  (carOnX - carWidth))){
+                // check collisions on X axis
+                (playerAreaOnXAxis) <=  (carAreaOnXAxis)) || (playerOnX >= carOnX &&
+                        (playerOnX - playerWidth) <= (carOnX - carWidth))){
 
-            // check collisions on Y axis
-            if((playerOnY >= carOnY &&
-                    (playerAreaOnYAxis <= (carAreaOnYAxis))) ||
-                    (playerOnY >= carOnY &&
-                            (playerOnY - playerHeight <= (carOnY)))){
-                collided = true;
-            }
+                // check collisions on Y axis
+                if((playerOnY >= carOnY &&
+                        (playerAreaOnYAxis <= (carAreaOnYAxis))) || (playerOnY >= carOnY &&
+                                (playerOnY - playerHeight <= (carOnY)))){
+                    collided = true;
+                }
         }
         return collided;
-
     }
-
 
     // Setter + Getter
     public List<Car> getCars() {

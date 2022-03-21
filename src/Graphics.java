@@ -5,9 +5,7 @@ import javafx.scene.text.Font;
 import model.Car;
 import model.Model;
 
-import java.awt.*;
 import javafx.scene.image.Image;
-
 
 public class Graphics {
 
